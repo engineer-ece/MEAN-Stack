@@ -1,0 +1,22 @@
+<p>node1 works!</p>
+<h2> My Node1 </h2>
+<ul class="node1">
+    <li *ngFor = "let node of node1" [class.selected]="node === selectedNode1" (click)="onSelect(node)">
+      
+      <span class="badge">{{node.id}}</span>{{node.name}}
+    </li>
+
+</ul>
+
+
+
+<div *ngIf="selectedNode1">
+  <h2>{{selectedNode1.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedNode1.id}}</div>
+  <div>
+   <label>Name: 
+   <input [(ngModel)] = "selectedNode1.name" placeholder="name"/>  
+  </label>
+ 
+  </div>
+</div>
